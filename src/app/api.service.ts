@@ -10,16 +10,21 @@ export class ApiService {
 
   userRegistration=(dataToSend:any)=>
   {
-    return this.http.post("http://localhost:8080/userReg",dataToSend);
+    return this.http.post("http://localhost:8081/userReg",dataToSend);
   }
 
   userLogin=(dataToSend:any)=>
   {
-    return this.http.post("http://localhost:8080/userLogin",dataToSend);
+    return this.http.post("http://localhost:8081/userLogin",dataToSend);
   }
 
   viewProfile=(dataToSend:any)=>
   {
     return this.http.post("http://localhost:8081/viewProfile",dataToSend)
+  }
+
+  addCompliant=(dataToSend:any)=>
+  {
+    return this.http.post("http://localhost:8081/addCompliant",dataToSend)
   }
 }
