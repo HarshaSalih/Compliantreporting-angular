@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ApiService } from '../api.service';
 })
 export class UserLoginComponent {
 
-  constructor(private api:ApiService){}
+  constructor(private api:ApiService,private route:Router){}
 
   
   username=""
@@ -23,8 +24,10 @@ export class UserLoginComponent {
     this.api.userLogin(data).subscribe(
       (response:any)=>
       {
+        console.log(data)
         if (response.status=="success") {
-          alert("Login success")
+          localStorage.setItem("userInfo",response.userId)
+          // alert("Login success")
           
         } else {
           alert("Login failed")

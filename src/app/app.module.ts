@@ -9,7 +9,9 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { UserLoginComponent } from './user-login/user-login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdminNavComponent } from './admin-nav/admin-nav.component'
 
 const myRoute:Routes=[
   {
@@ -23,6 +25,10 @@ const myRoute:Routes=[
   {
     path:"userlogin",
     component:UserLoginComponent
+  },
+  {
+    path:"dashboard",
+    component:DashboardComponent
   }
 ]
 
@@ -32,7 +38,9 @@ const myRoute:Routes=[
     AdminLoginComponent,
     UserRegistrationComponent,
     UserLoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    DashboardComponent,
+    AdminNavComponent
   ],
   imports: [
     BrowserModule,
