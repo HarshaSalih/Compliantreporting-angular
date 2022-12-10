@@ -14,6 +14,7 @@ export class UserLoginComponent {
   
   username=""
   password=""
+  searchUsers:any=[]
 
 
   readValues=()=>
@@ -24,13 +25,30 @@ export class UserLoginComponent {
     this.api.userLogin(data).subscribe(
       (response:any)=>
       {
-        console.log(data)
-        if (response.status=="success") {
-          localStorage.setItem("userInfo",response.userId)
-          // alert("Login success")
+        console.log(response)
+       
+        if(response.length==0)
+        {
+          alert("Invalid credential")
+          this.username=""
+          this.password=""
+        }
+        else
+        {
+          this.searchUsers=response;
+          let userid=response.userid
+          console.log(userid)
+          localStorage.setItem("userInfo",this.searchUsers.userid)
+          this.route.navigate(["/viewprofile"])
+        // }
+        // console.log(data)
+        // if (response.status=="success") {
+        //   let userId=response.userId
           
-        } else {
-          alert("Login failed")
+        //   alert("Login success")
+          
+        // } else {
+        //   alert(response.message)
           
         }
       }

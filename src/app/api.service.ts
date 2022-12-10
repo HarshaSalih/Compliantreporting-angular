@@ -17,4 +17,9 @@ export class ApiService {
   {
     return this.http.post("http://localhost:8080/userLogin",dataToSend);
   }
+
+  viewProfile=(dataToSend:any)=>
+  {
+    return this.http.post("http://localhost:8081/viewProfile",dataToSend)
+  }
 }

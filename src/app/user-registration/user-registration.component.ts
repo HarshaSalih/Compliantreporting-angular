@@ -35,7 +35,7 @@ export class UserRegistrationComponent {
           this.email=""
           this.username=""
           this.password=""
-          this.route.navigate(['/userlogin'])
+          // this.route.navigate(['/userlogin'])
           }
           else
           {
