@@ -12,7 +12,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
-import { ViewProfileComponent } from './view-profile/view-profile.component'
+import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { AddCompliantComponent } from './add-compliant/add-compliant.component'
 
 const myRoute:Routes=[
   {
@@ -34,6 +35,10 @@ const myRoute:Routes=[
   {
     path:"viewprofile",
     component:ViewProfileComponent
+  },
+  {
+    path:"addcompliant",
+    component:AddCompliantComponent
   }
   
 ]
@@ -47,7 +52,8 @@ const myRoute:Routes=[
     NavbarComponent,
     DashboardComponent,
     AdminNavComponent,
-    ViewProfileComponent
+    ViewProfileComponent,
+    AddCompliantComponent
   ],
   imports: [
     BrowserModule,

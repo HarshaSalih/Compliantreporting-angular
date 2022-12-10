@@ -8,17 +8,11 @@ import { ApiService } from '../api.service';
 })
 export class ViewProfileComponent {
 
-  // name=""
-  // address=""
-  // phone=""
-  // email=""
-  // password=""
-  // confirmpassword=""
+ 
   userId:any=""
   constructor(private api:ApiService){
     this.userId=localStorage.getItem("userInfo")
     let data:any={"id":this.userId}
-    
     this.api.viewProfile(data).subscribe(
       (response:any)=>
       {
