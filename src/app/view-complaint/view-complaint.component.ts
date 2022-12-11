@@ -10,7 +10,7 @@ export class ViewComplaintComponent {
 
   userId:any=""
   constructor(private api:ApiService){
-    this.userId=localStorage.getItem("userId")
+    this.userId=localStorage.getItem("userInfo")
     let data:any={"userId":this.userId}
     console.log(data);
     api.viewCompliant(data).subscribe(
