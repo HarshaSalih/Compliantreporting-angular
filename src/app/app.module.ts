@@ -13,7 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
-import { AddCompliantComponent } from './add-compliant/add-compliant.component'
+import { AddCompliantComponent } from './add-compliant/add-compliant.component';
+import { ViewComplaintComponent } from './view-complaint/view-complaint.component';
+import { ViewAllComplaintComponent } from './view-all-complaint/view-all-complaint.component'
 
 const myRoute:Routes=[
   {
@@ -28,10 +30,7 @@ const myRoute:Routes=[
     path:"userlogin",
     component:UserLoginComponent
   },
-  {
-    path:"dashboard",
-    component:DashboardComponent
-  },
+  
   {
     path:"viewprofile",
     component:ViewProfileComponent
@@ -39,6 +38,14 @@ const myRoute:Routes=[
   {
     path:"addcompliant",
     component:AddCompliantComponent
+  },
+  {
+    path:"viewcomplaint",
+    component:ViewComplaintComponent
+  },
+  {
+    path:"viewallcomplaint",
+    component:ViewAllComplaintComponent
   }
   
 ]
@@ -53,7 +60,9 @@ const myRoute:Routes=[
     DashboardComponent,
     AdminNavComponent,
     ViewProfileComponent,
-    AddCompliantComponent
+    AddCompliantComponent,
+    ViewComplaintComponent,
+    ViewAllComplaintComponent
   ],
   imports: [
     BrowserModule,
