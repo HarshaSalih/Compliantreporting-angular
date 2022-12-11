@@ -18,6 +18,7 @@ export class UserLoginComponent {
   readValues=()=>
   {
     let data:any={"username":this.username,"password":this.password}
+    console.log(data)
     
 
     this.api.userLogin(data).subscribe(
@@ -25,7 +26,9 @@ export class UserLoginComponent {
       {
         if (response.status=="success")
         {
+          console.log(data)
           localStorage.setItem("userInfo",response.userId)
+          
           // alert("login success")
           this.route.navigate(['/viewprofile'])
         }
